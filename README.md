@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Invoice - Hirava Production</title>
+  <title>Invoice - VIHAN ENTERPRISE</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -130,10 +130,10 @@
     </div>
 
     <h4>TAX INVOICE</h4>
-    <h2>HIRAVA PRODUCTION</h2>
+    <h2>VIHAN ENTERPRISE</h2>
     <div class="company-address">
       Address: Sant Kabir Main Road, Rajkot, Gujarat<br>
-      Phone: +91 98765 43210 &nbsp; | &nbsp; Email: hiravaproduction@gmail.com
+      Phone: +91 9624328466 &nbsp; | &nbsp; Email: vihanenterprise@gmail.com
     </div>
 
     <div class="header">
@@ -169,9 +169,9 @@
     <div class="bottom-section">
       <div class="bank-details">
         <p><strong>Bank Details:</strong><br>
-        A/c Name: HIRAVA PRODUCTION<br>
-        A/c No: 138305501295<br>
-        IFSC Code: ICIC0001383</p>
+        A/c Name: vihan enterprise<br>
+        A/c No: <br>
+        IFSC Code: </p>
       </div>
 
       <div class="totals">
@@ -181,8 +181,6 @@
             <td>Packing Charge</td>
             <td><input type="number" id="packingCharge" value="0" oninput="calculateTotals()" style="text-align:right; width:80px;"></td>
           </tr>
-          <tr><td>CGST 1.5%</td><td id="cgst">0.00</td></tr>
-          <tr><td>SGST 1.5%</td><td id="sgst">0.00</td></tr>
           <tr><td>IGST 3%</td><td id="igst">0.00</td></tr>
           <tr><td>Round Off</td><td id="roundOff">0.00</td></tr>
           <tr><td>Total Amount</td><td id="total">0.00</td></tr>
@@ -246,16 +244,12 @@
       });
       const packing = parseFloat(document.getElementById('packingCharge').value) || 0;
       const totalBeforeTax = subtotal + packing;
-      const cgst = totalBeforeTax * 0.015;
-      const sgst = totalBeforeTax * 0.015;
       const igst = totalBeforeTax * 0.03;
-      let total = totalBeforeTax + cgst + sgst + igst;
+      let total = totalBeforeTax + igst;
       const rounded = Math.round(total);
       const roundOff = (rounded - total).toFixed(2);
       total = rounded;
       document.getElementById('subtotal').textContent = subtotal.toFixed(2);
-      document.getElementById('cgst').textContent = cgst.toFixed(2);
-      document.getElementById('sgst').textContent = sgst.toFixed(2);
       document.getElementById('igst').textContent = igst.toFixed(2);
       document.getElementById('roundOff').textContent = roundOff;
       document.getElementById('total').textContent = total.toFixed(2);
